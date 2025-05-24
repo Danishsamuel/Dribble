@@ -26,10 +26,218 @@ Create a HTML file and include the needed Bootstrap components.
 Publish the website in the LocalHost.
 
 ## PROGRAM :
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie & TV Show Explorer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .tool-card {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform 0.3s ease;
+    }
+    .tool-card:hover {
+      transform: scale(1.03);
+    }
+    .tool-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .tool-info {
+      padding: 15px;
+    }
+    .search-bar {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
 
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light px-4">
+  <img src="logo.png" alt="Logo" height="40">
+  <div>
+    <button class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+  </div>
+</nav>
 
+<!-- Header -->
+<div class="text-center my-4">
+  <h1>Explore Movies & TV Shows</h1>
+  <p class="text-muted">Discover top picks and trending entertainment.</p>
+  <div class="search-bar input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search movies or shows..." />
+    <button class="btn btn-outline-secondary">Search</button>
+  </div>
+</div>
+
+<!-- Movies Section -->
+<div class="container">
+  <h4 class="mb-3">Popular Titles</h4>
+  <div class="row g-4">
+    <!-- Movie 1 -->
+    <div class="col-md-4">
+      <div class="tool-card">
+        <img src="break.jpg" alt="Breaking Bad">
+        <div class="tool-info">
+          <h6>Breaking Bad</h6>
+          <p class="text-muted small">A high school teacher turns to crime in this intense drama.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Movie 2 -->
+    <div class="col-md-4">
+      <div class="tool-card">
+        <img src="st.jpg" alt="Stranger Things">
+        <div class="tool-info">
+          <h6>Stranger Things</h6>
+          <p class="text-muted small">A thrilling sci-fi adventure with 80s nostalgia and monsters.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Movie 3 -->
+    <div class="col-md-4">
+      <div class="tool-card">
+        <img src="office.jpg" alt="The Office">
+        <div class="tool-info">
+          <h6>The Office</h6>
+          <p class="text-muted small">A comedic look at office life in a mockumentary style.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Movie 4 -->
+    <div class="col-md-4">
+      <div class="tool-card">
+        <img src="got.webp" alt="Game of Thrones">
+        <div class="tool-info">
+          <h6>Game of Thrones</h6>
+          <p class="text-muted small">Epic battles, dragons, and politics in a fantasy world.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Movie 5 -->
+    <div class="col-md-4">
+      <div class="tool-card">
+        <img src="frnds.jpg" alt="Friends">
+        <div class="tool-info">
+          <h6>Friends</h6>
+          <p class="text-muted small">Six pals navigate life and love in New York City.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Movie 6 -->
+    <div class="col-md-4">
+      <div class="tool-card">
+        <img src="loki2.jpg" alt="Loki">
+        <div class="tool-info">
+          <h6>Loki</h6>
+          <p class="text-muted small">The God of Mischief explores timelines in this Marvel series.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Movie 7 -->
+    <div class="col-md-4">
+      <div class="tool-card">
+        <img src="money.jpg" alt="Money Heist">
+        <div class="tool-info">
+          <h6>Money Heist</h6>
+          <p class="text-muted small">A criminal mastermind leads a high-stakes heist in Spain.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="loginUserID" class="form-label">User ID</label>
+            <input type="text" class="form-control" id="loginUserID" placeholder="Enter your user ID" />
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" />
+          </div>
+          <button type="submit" class="btn btn-dark w-100">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" />
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter your address" />
+          </div>
+          <div class="mb-3">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dob" />
+          </div>
+          <div class="mb-3">
+            <label for="signupUserID" class="form-label">User ID</label>
+            <input type="text" class="form-control" id="signupUserID" placeholder="Create a user ID" />
+          </div>
+          <div class="mb-3">
+            <label for="signupPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" />
+          </div>
+          <button type="submit" class="btn btn-dark w-100">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer style="background-color:#3a3a3a; color: white; text-align: center; padding: 30px 10px; margin-top: 40px;">
+  <p style="margin: 5px;">Email: moviefansupport@gmail.com</p>
+  <p style="margin: 5px;">Contact: +91 9123456780</p>
+  <p style="margin: 5px;">Address: 123 Cinema Lane, Film City, India - 400001</p>
+  <p style="margin: 5px;">Built by Danish Samuel  M</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```
 ## OUTPUT:
-
-
+![alt text](<Screenshot 2025-05-24 165038.png>)
+![alt text](<Screenshot 2025-05-24 165218.png>)
+![alt text](<Screenshot 2025-05-24 165235.png>)
 ## RESULT:
 The Project for responsive web design using Bootstrap is completed successfully.
